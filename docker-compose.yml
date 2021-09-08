@@ -1,0 +1,12 @@
+version: '3'
+services: 
+  web:
+    #build: . since our Dockerfile name is Dockerfile.dev so it won't work
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - /home/node/app/node_modules
+      - .:/home/node/app
